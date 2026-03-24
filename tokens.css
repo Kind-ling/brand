@@ -1,0 +1,45 @@
+/* Kindling Design Tokens v1.0 */
+/* https://github.com/Kind-ling/brand */
+
+:root {
+  /* ===== PRIMARY PALETTE ===== */
+  --ember: #E8652A;
+  --ember-light: #F0884E;
+  --ember-glow: rgba(232, 101, 42, 0.12);
+  --ember-dim: #B84D1E;
+
+  /* ===== SURFACE SYSTEM ===== */
+  --void: #08080B;
+  --ground: #0D0D11;
+  --surface-1: #131317;
+  --surface-2: #1A1A20;
+  --surface-3: #222228;
+  --surface-raised: #2A2A32;
+
+  /* ===== BORDER SYSTEM ===== */
+  --border-subtle: #1E1E26;
+  --border-default: #2A2A34;
+  --border-strong: #3A3A46;
+  --border-ember: rgba(232, 101, 42, 0.25);
+
+  /* ===== TEXT SYSTEM ===== */
+  --text-primary: #EAEAEF;
+  --text-secondary: #9898AC;
+  --text-tertiary: #5E5E72;
+  --text-inverse: #08080B;
+
+  /* ===== SEMANTIC ===== */
+  --trust: #3B9ECC;
+  --trust-dim: rgba(59, 158, 204, 0.12);
+  --growth: #5EBB6E;
+  --growth-dim: rgba(94, 187, 110, 0.12);
+  --caution: #CCB43B;
+  --caution-dim: rgba(204, 180, 59, 0.12);
+  --critical: #E84040;
+  --critical-dim: rgba(232, 64, 64, 0.12);
+
+  /* ===== TYPOGRAPHY ===== */
+  --display: 'Anybody', sans-serif;
+  --body: 'Source Serif 4', serif;
+  --mono: 'IBM Plex Mono', monospace;
+}
