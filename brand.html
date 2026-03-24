@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kindling — Brand Package</title>
+<link href="https://fonts.googleapis.com/css2?family=Anybody:wght@300;400;500;600;700;800&family=IBM+Plex+Mono:wght@300;400;500;600&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ember: #E8652A;
+  --ember-light: #F0884E;
+  --ember-glow: rgba(232, 101, 42, 0.12);
+  --ember-dim: #B84D1E;
+  --void: #08080B;
+  --ground: #0D0D11;
+  --surface-1: #131317;
+  --surface-2: #1A1A20;
+  --surface-3: #222228;
+  --surface-raised: #2A2A32;
+  --border-subtle: #1E1E26;
+  --border-default: #2A2A34;
+  --border-strong: #3A3A46;
+  --border-ember: rgba(232, 101, 42, 0.25);
+  --text-primary: #EAEAEF;
+  --text-secondary: #9898AC;
+  --text-tertiary: #5E5E72;
+  --text-inverse: #08080B;
+  --trust: #3B9ECC;
+  --trust-dim: rgba(59, 158, 204, 0.12);
+  --growth: #5EBB6E;
+  --growth-dim: rgba(94, 187, 110, 0.12);
+  --caution: #CCB43B;
+  --caution-dim: rgba(204, 180, 59, 0.12);
+  --display: 'Anybody', sans-serif;
+  --body: 'Source Serif 4', serif;
+  --mono: 'IBM Plex Mono', monospace;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { font-size: 16px; scroll-behavior: smooth; }
+body { background: var(--void); color: var(--text-primary); font-family: var(--body); line-height: 1.65; -webkit-font-smoothing: antialiased; }
+::selection { background: var(--ember); color: var(--void); }
+
+.page { max-width: 1120px; margin: 0 auto; padding: 0 2rem; }
+.brand-section { padding: 5rem 0; border-bottom: 1px solid var(--border-subtle); }
+.brand-section:last-child { border-bottom: none; }
+
+.brand-header {
+  min-height: 100vh; display: flex; flex-direction: column;
+  justify-content: center; align-items: center; text-align: center;
+  padding: 4rem 2rem; position: relative; overflow: hidden;
+}
+.brand-header::before {
+  content: ''; position: absolute; top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px; height: 600px;
+  background: radial-gradient(circle, var(--ember-glow) 0%, transparent 65%);
+  pointer-events: none;
+}
+.brand-header .overline {
+  font-family: var(--mono); font-size: 0.65rem; font-weight: 400;
+  letter-spacing: 0.3em; text-transform: uppercase;
+  color: var(--ember); margin-bottom: 2rem; opacity: 0.8;
+}
+.brand-header h1 {
+  font-family: var(--display); font-size: clamp(3.5rem, 10vw, 7rem);
+  font-weight: 700; letter-spacing: -0.03em;
+  line-height: 0.95; margin-bottom: 1.5rem;
+  background: linear-gradient(135deg, var(--text-primary) 30%, var(--ember-light) 100%);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.brand-header .tagline {
+  font-family: var(--body); font-size: 1.15rem; font-weight: 300;
+  color: var(--text-secondary); max-width: 480px;
+  font-style: italic; line-height: 1.7;
+}
+.brand-header .version {
+  margin-top: 3rem; font-family: var(--mono); font-size: 0.6rem;
+  letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--text-tertiary);
+}
+
+.section-label {
+  font-family: var(--mono); font-size: 0.58rem; font-weight: 500;
+  letter-spacing: 0.3em; text-transform: uppercase;
+  color: var(--ember-dim); margin-bottom: 0.75rem;
+}
+.section-title {
+  font-family: var(--display); font-size: clamp(1.5rem, 3vw, 2.2rem);
+  font-weight: 600; letter-spacing: -0.02em;
+  margin-bottom: 1rem; color: var(--text-primary);
+}
+.section-desc {
+  font-size: 0.95rem; color: var(--text-secondary);
+  max-width: 560px; font-weight: 300; margin-bottom: 2.5rem;
+}
+
+.logo-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1px; background: var(--border-subtle);
+  border: 1px solid var(--border-subtle); border-radius: 6px;
+  overflow: hidden; margin: 2rem 0;
+}
+.logo-cell {
+  padding: 3rem 2rem; display: flex; flex-direction: column;
+  align-items: center; justify-content: center; gap: 1.5rem;
+  min-height: 220px;
+}
+.logo-cell.dark { background: var(--ground); }
+.logo-cell.light { background: #F2F0ED; }
+.logo-cell.ember { background: var(--ember); }
+.logo-cell .cell-label {
+  font-family: var(--mono); font-size: 0.55rem; letter-spacing: 0.15em;
+  text-transform: uppercase; opacity: 0.5;
+}
+.logo-cell.light .cell-label { color: #333; }
+.logo-cell.ember .cell-label { color: rgba(255,255,255,0.6); }
+
+.kindling-logo { width: 180px; height: auto; }
+.kindling-mark { width: 56px; height: auto; }
+
+.swatch-row {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 12px; margin: 1.5rem 0;
+}
+.swatch { border-radius: 6px; overflow: hidden; border: 1px solid var(--border-subtle); }
+.swatch-color { height: 72px; }
+.swatch-info { padding: 0.6rem 0.75rem; background: var(--surface-1); }
+.swatch-name { font-family: var(--mono); font-size: 0.62rem; font-weight: 500; letter-spacing: 0.05em; color: var(--text-primary); margin-bottom: 0.2rem; }
+.swatch-hex { font-family: var(--mono); font-size: 0.58rem; color: var(--text-tertiary); }
+.swatch-var { font-family: var(--mono); font-size: 0.52rem; color: var(--text-tertiary); margin-top: 0.15rem; }
+
+.type-specimen {
+  background: var(--surface-1); border: 1px solid var(--border-subtle);
+  border-radius: 6px; padding: 2rem; margin: 1.5rem 0;
+}
+.type-specimen .specimen-label {
+  font-family: var(--mono); font-size: 0.55rem; letter-spacing: 0.15em;
+  text-transform: uppercase; color: var(--ember-dim); margin-bottom: 1rem;
+}
+.type-specimen .display-sample {
+  font-family: var(--display); font-size: 2.5rem; font-weight: 700;
+  letter-spacing: -0.02em; line-height: 1.1; margin-bottom: 0.5rem;
+}
+.type-specimen .body-sample {
+  font-family: var(--body); font-size: 1rem; font-weight: 300;
+  color: var(--text-secondary); line-height: 1.7;
+  max-width: 520px; font-style: italic;
+}
+.type-specimen .mono-sample {
+  font-family: var(--mono); font-size: 0.82rem; font-weight: 400;
+  color: var(--text-secondary); line-height: 1.8;
+}
+
+.component-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem; margin: 2rem 0;
+}
+.component-card {
+  background: var(--surface-1); border: 1px solid var(--border-subtle);
+  border-radius: 6px; padding: 1.5rem; position: relative;
+}
+.component-card::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0;
+  height: 2px; background: linear-gradient(90deg, var(--ember), var(--ember-light));
+  border-radius: 6px 6px 0 0;
+}
+.component-card .card-title { font-family: var(--display); font-size: 0.95rem; font-weight: 600; margin-bottom: 0.5rem; }
+.component-card .card-desc { font-family: var(--body); font-size: 0.85rem; font-weight: 300; color: var(--text-secondary); margin-bottom: 1rem; line-height: 1.6; }
+
+.badge {
+  display: inline-flex; align-items: center; gap: 0.35rem;
+  font-family: var(--mono); font-size: 0.58rem; font-weight: 500;
+  letter-spacing: 0.05em; text-transform: uppercase;
+  padding: 0.3rem 0.65rem; border-radius: 3px;
+}
+.badge--ember { background: var(--ember-glow); color: var(--ember); border: 1px solid var(--border-ember); }
+.badge--trust { background: var(--trust-dim); color: var(--trust); border: 1px solid rgba(59,158,204,0.25); }
+.badge--growth { background: var(--growth-dim); color: var(--growth); border: 1px solid rgba(94,187,110,0.25); }
+.badge--caution { background: var(--caution-dim); color: var(--caution); border: 1px solid rgba(204,180,59,0.25); }
+
+.button-row { display: flex; flex-wrap: wrap; gap: 0.75rem; margin: 1.5rem 0; }
+.btn {
+  font-family: var(--mono); font-size: 0.7rem; font-weight: 500;
+  letter-spacing: 0.06em; padding: 0.6rem 1.25rem; border: none;
+  border-radius: 4px; cursor: pointer; transition: all 0.2s;
+  text-transform: uppercase;
+}
+.btn--primary { background: var(--ember); color: #fff; }
+.btn--primary:hover { background: var(--ember-light); }
+.btn--secondary { background: transparent; color: var(--text-primary); border: 1px solid var(--border-default); }
+.btn--secondary:hover { border-color: var(--ember); color: var(--ember); }
+.btn--ghost { background: transparent; color: var(--ember); }
+.btn--ghost:hover { background: var(--ember-glow); }
+
+.code-example {
+  background: var(--ground); border: 1px solid var(--border-subtle);
+  border-radius: 6px; padding: 1.25rem 1.5rem; margin: 1.5rem 0;
+  font-family: var(--mono); font-size: 0.72rem; line-height: 1.9;
+  color: var(--text-secondary); overflow-x: auto;
+}
+.code-example .comment { color: var(--text-tertiary); }
+.code-example .keyword { color: var(--ember); }
+.code-example .string { color: var(--growth); }
+.code-example .func { color: var(--trust); }
+
+.social-preview { border: 1px solid var(--border-subtle); border-radius: 6px; overflow: hidden; margin: 1.5rem 0; }
+.social-card {
+  background: var(--ground); padding: 3rem;
+  display: flex; flex-direction: column;
+  align-items: flex-start; justify-content: flex-end;
+  min-height: 260px; position: relative;
+}
+.social-card::before {
+  content: ''; position: absolute; top: 0; right: 0;
+  width: 50%; height: 100%;
+  background: radial-gradient(ellipse at top right, var(--ember-glow) 0%, transparent 60%);
+  pointer-events: none;
+}
+.social-card .social-title { font-family: var(--display); font-size: 1.8rem; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 0.5rem; position: relative; }
+.social-card .social-desc { font-family: var(--body); font-size: 0.88rem; font-weight: 300; color: var(--text-secondary); position: relative; font-style: italic; }
+.social-label { padding: 0.5rem 1rem; background: var(--surface-1); font-family: var(--mono); font-size: 0.55rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-tertiary); }
+
+.guideline { display: flex; gap: 2rem; margin: 1.5rem 0; padding: 1.5rem; background: var(--surface-1); border: 1px solid var(--border-subtle); border-radius: 6px; }
+.guideline .do, .guideline .dont { flex: 1; }
+.guideline .label { font-family: var(--mono); font-size: 0.6rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.75rem; }
+.guideline .do .label { color: var(--growth); }
+.guideline .dont .label { color: #E84040; }
+.guideline p { font-size: 0.82rem; color: var(--text-secondary); font-weight: 300; }
+
+@media (max-width: 640px) {
+  .page { padding: 0 1.25rem; }
+  .guideline { flex-direction: column; gap: 1rem; }
+  .logo-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<header class="brand-header">
+  <div class="overline">Brand Package v1.0</div>
+  <h1>Kindling</h1>
+  <p class="tagline">Open infrastructure for the agent economy. Transparent rails for discovery, reputation, and settlement.</p>
+  <div class="version">github.com/kind-ling · Permanent Upper Class · March 2026</div>
+</header>
+
+<div class="page">
+
+  <!-- 01 LOGO SYSTEM -->
+  <section class="brand-section">
+    <div class="section-label">01 — Logo System</div>
+    <div class="section-title">The mark</div>
+    <div class="section-desc">The Kindling logo pairs a geometric mark (three ascending bars evoking stacked kindling / signal strength / upward trajectory) with the wordmark in Anybody. The mark works alone at small sizes; the full lockup is used in contexts with sufficient space.</div>
+
+    <div class="logo-grid">
+      <div class="logo-cell dark">
+        <svg class="kindling-logo" viewBox="0 0 320 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="0" y="38" width="10" height="26" rx="2" fill="#E8652A"/>
+          <rect x="14" y="24" width="10" height="40" rx="2" fill="#E8652A"/>
+          <rect x="28" y="10" width="10" height="54" rx="2" fill="#E8652A"/>
+          <text x="52" y="52" font-family="'Anybody', sans-serif" font-weight="700" font-size="40" letter-spacing="-1" fill="#EAEAEF">kindling</text>
+        </svg>
+        <span class="cell-label">Dark background (primary)</span>
+      </div>
+      <div class="logo-cell light">
+        <svg class="kindling-logo" viewBox="0 0 320 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="0" y="38" width="10" height="26" rx="2" fill="#E8652A"/>
+          <rect x="14" y="24" width="10" height="40" rx="2" fill="#E8652A"/>
+          <rect x="28" y="10" width="10" height="54" rx="2" fill="#E8652A"/>
+          <text x="52" y="52" font-family="'Anybody', sans-serif" font-weight="700" font-size="40" letter-spacing="-1" fill="#08080B">kindling</text>
+        </svg>
+        <span class="cell-label">Light background</span>
+      </div>
+      <div class="logo-cell ember">
+        <svg class="kindling-logo" viewBox="0 0 320 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="0" y="38" width="10" height="26" rx="2" fill="#FFFFFF"/>
+          <rect x="14" y="24" width="10" height="40" rx="2" fill="#FFFFFF"/>
+          <rect x="28" y="10" width="10" height="54" rx="2" fill="#FFFFFF"/>
+          <text x="52" y="52" font-family="'Anybody', sans-serif" font-weight="700" font-size="40" letter-spacing="-1" fill="#FFFFFF">kindling</text>
+        </svg>
+        <span class="cell-label">Ember background (accent use)</span>
+      </div>
+      <div class="logo-cell dark">
+        <svg class="kindling-mark" viewBox="0 0 44 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="0" y="38" width="10" height="26" rx="2" fill="#E8652A"/>
+          <rect x="14" y="24" width="10" height="40" rx="2" fill="#E8652A"/>
+          <rect x="28" y="10" width="10" height="54" rx="2" fill="#E8652A"/>
+        </svg>
+        <span class="cell-label">Mark only (favicons, small)</span>
+      </div>
+    </div>
+
+    <div class="guideline">
+      <div class="do">
+        <div class="label">Do</div>
+        <p>Use the full lockup on dark backgrounds wherever possible. Maintain generous clear space (minimum 1× mark height on all sides). Use the mark alone only at sizes below 120px wide.</p>
+      </div>
+      <div class="dont">
+        <div class="label">Don't</div>
+        <p>Don't rotate, stretch, recolor individual bars, add effects/shadows, or place on busy backgrounds without a scrim. Don't use the ember-background variant as the default.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 02 COLOR -->
+  <section class="brand-section">
+    <div class="section-label">02 — Color Palette</div>
+    <div class="section-title">Ember on void</div>
+    <div class="section-desc">The palette centers on a warm, assertive ember orange against deep near-black surfaces. The ember is used sparingly — it marks the active, the important, the Kindling-touched. Everything else is restrained neutrals with high contrast text.</div>
+
+    <div class="section-label" style="margin-top:2rem">Primary</div>
+    <div class="swatch-row">
+      <div class="swatch"><div class="swatch-color" style="background:#E8652A"></div><div class="swatch-info"><div class="swatch-name">Ember</div><div class="swatch-hex">#E8652A</div><div class="swatch-var">--ember</div></div></div>
+      <div class="swatch"><div class="swatch-color" style="background:#F0884E"></div><div class="swatch-info"><div class="swatch-name">Ember Light</div><div class="swatch-hex">#F0884E</div><div class="swatch-var">--ember-light</div></div></div>
+      <div class="swatch"><div class="swatch-color" style="background:#B84D1E"></div><div class="swatch-info"><div class="swatch-name">Ember Dim</div><div class="swatch-hex">#B84D1E</div><div class="swatch-var">--ember-dim</div></div></div>
+    </div>
+
+    <div class="section-label" style="margin-top:2rem">Surfaces</div>
+    <div class="swatch-row">
+      <div class="swatch"><div class="swatch-color" style="background:#08080B"></div><div class="swatch-info"><div class="swatch-name">Void</div><div class="swatch-hex">#08080B</div><div class="swatch-var">--void</div></div></div>
+      <div class="swatch"><div class="swatch-color" style="background:#0D0D11"></div><div class="swatch-info"><div class="swatch-name">Ground</div><div class="swatch-hex">#0D0D11</div><div class="swatch-var">--ground</div></div></div>
+      <div class="swatch"><div class="swatch-color" style="background:#131317"></div><div class="swatch-info"><div class="swatch-name">Surface 1</div><div class="swatch-hex">#131317</div><div class="swatch-var">--surface-1</div></div></div>
+      <div class="swatch"><div class="swatch-color" style="background:#1A1A20"></div><div class="swatch-info"><div class="swatch-name">Surface 2</div><div class="swatch-hex">#1A1A20</div><div class="swatch-var">--surface-2</div></div></div>
+      <div class="swatch"><div class="swatch-color" style="background:#222228"></div><div class="swatch-info"><div class="swatch-name">Surface 3</div><div class="swatch-hex">#222228</div><div class="swatch-var">--surface-3</div></div></div>
+    </div>
+
+    <div class="section-label" style="margin-top:2rem">Semantic</div>
+    <div class="swatch-row">
+      <div class="swatch"><div class="swatch-color" style="background:#3B9ECC"></div><div class="swatch-info"><div class="swatch-name">Trust</div><div class="swatch-hex">#3B9ECC</div><div class="swatch-var">--trust</div></div></div>
+      <div class="swatch"><div class="swatch-color" style="background:#5EBB6E"></div><div class="swatch-info"><div class="swatch-name">Growth</div><div class="swatch-hex">#5EBB6E</div><div class="swatch-var">--growth</div></div></div>
+      <div class="swatch"><div class="swatch-color" style="background:#CCB43B"></div><div class="swatch-info"><div class="swatch-name">Caution</div><div class="swatch-hex">#CCB43B</div><div class="swatch-var">--caution</div></div></div>
+      <div class="swatch"><div class="swatch-color" style="background:#E84040"></div><div class="swatch-info"><div class="swatch-name">Critical</div><div class="swatch-hex">#E84040</div><div class="swatch-var">--critical</div></div></div>
+    </div>
+
+    <div class="section-label" style="margin-top:2rem">Text</div>
+    <div class="swatch-row">
+      <div class="swatch"><div class="swatch-color" style="background:#EAEAEF"></div><div class="swatch-info"><div class="swatch-name">Primary</div><div class="swatch-hex">#EAEAEF</div><div class="swatch-var">--text-primary</div></div></div>
+      <div class="swatch"><div class="swatch-color" style="background:#9898AC"></div><div class="swatch-info"><div class="swatch-name">Secondary</div><div class="swatch-hex">#9898AC</div><div class="swatch-var">--text-secondary</div></div></div>
+      <div class="swatch"><div class="swatch-color" style="background:#5E5E72"></div><div class="swatch-info"><div class="swatch-name">Tertiary</div><div class="swatch-hex">#5E5E72</div><div class="swatch-var">--text-tertiary</div></div></div>
+    </div>
+  </section>
+
+  <!-- 03 TYPOGRAPHY -->
+  <section class="brand-section">
+    <div class="section-label">03 — Typography</div>
+    <div class="section-title">Three voices</div>
+    <div class="section-desc">Anybody for display (assertive, geometric, modern). Source Serif 4 for body (readable, warm, trustworthy). IBM Plex Mono for code and data (precise, utilitarian, honest).</div>
+
+    <div class="type-specimen">
+      <div class="specimen-label">Display — Anybody 700</div>
+      <div class="display-sample">Agent Economy Infrastructure</div>
+      <div style="font-family:var(--mono);font-size:0.6rem;color:var(--text-tertiary);margin-top:0.75rem">Usage: headings, hero text, product names, section titles<br>Weights: 600 (subheads), 700 (primary), 800 (impact)</div>
+    </div>
+
+    <div class="type-specimen">
+      <div class="specimen-label">Body — Source Serif 4</div>
+      <div class="body-sample">Kindling is trustworthy not because PUC promises neutrality, but because the system minimizes discretionary power: methodology is public, rankings are reproducible, first-party inventory is labeled, routing decisions are exportable and explainable.</div>
+      <div style="font-family:var(--mono);font-size:0.6rem;color:var(--text-tertiary);margin-top:0.75rem">Usage: body text, descriptions, long-form documentation<br>Weights: 300 (body), 400 (emphasis), 600 (strong)</div>
+    </div>
+
+    <div class="type-specimen">
+      <div class="specimen-label">Mono — IBM Plex Mono</div>
+      <div class="mono-sample">
+        npx @kindling/igniter init<br>
+        referral_split_pct: 15<br>
+        is_first_party: true<br>
+        methodology_version: "1.2.0"
+      </div>
+      <div style="font-family:var(--mono);font-size:0.6rem;color:var(--text-tertiary);margin-top:0.75rem">Usage: code, data, labels, badges, metadata, terminal output<br>Weights: 300 (secondary), 400 (default), 500 (labels), 600 (emphasis)</div>
+    </div>
+  </section>
+
+  <!-- 04 COMPONENTS -->
+  <section class="brand-section">
+    <div class="section-label">04 — Components</div>
+    <div class="section-title">UI vocabulary</div>
+    <div class="section-desc">Reusable patterns for dashboards, docs, and marketing. The ember accent is used sparingly to indicate Kindling-specific elements. Everything else is neutral.</div>
+
+    <div class="section-label" style="margin-top:2rem">Badges</div>
+    <div class="button-row">
+      <span class="badge badge--ember">First Party</span>
+      <span class="badge badge--trust">Verified</span>
+      <span class="badge badge--growth">15% Referral</span>
+      <span class="badge badge--caution">Under Review</span>
+    </div>
+
+    <div class="section-label" style="margin-top:2rem">Buttons</div>
+    <div class="button-row">
+      <button class="btn btn--primary">Ship It</button>
+      <button class="btn btn--secondary">View Docs</button>
+      <button class="btn btn--ghost">Learn More</button>
+    </div>
+
+    <div class="section-label" style="margin-top:2rem">Cards</div>
+    <div class="component-grid">
+      <div class="component-card">
+        <div class="card-title">Kindling Igniter</div>
+        <div class="card-desc">x402 + MCP + A2A scaffolding for any service. Ship in 5 minutes.</div>
+        <div style="display:flex;gap:0.5rem"><span class="badge badge--ember">Core</span><span class="badge badge--growth">Phase 1</span></div>
+      </div>
+      <div class="component-card">
+        <div class="card-title">Kindling Verifier</div>
+        <div class="card-desc">Multidimensional reputation scoring. Demand · Reliability · Outcome.</div>
+        <div style="display:flex;gap:0.5rem"><span class="badge badge--ember">Core</span><span class="badge badge--trust">Verified</span></div>
+      </div>
+    </div>
+
+    <div class="section-label" style="margin-top:2rem">Code</div>
+    <div class="code-example"><span class="comment">// Add x402 payment to any Express route</span>
+<span class="keyword">import</span> { <span class="func">kindlingPayment</span> } <span class="keyword">from</span> <span class="string">'@kindling/igniter'</span>
+
+app.use(<span class="func">kindlingPayment</span>({
+  <span class="func">payTo</span>: <span class="string">'0xYourWallet'</span>,
+  <span class="func">amount</span>: <span class="string">'50000'</span>,
+  <span class="func">referralSplitPct</span>: <span class="keyword">15</span>
+}))</div>
+  </section>
+
+  <!-- 05 SOCIAL -->
+  <section class="brand-section">
+    <div class="section-label">05 — Social Assets</div>
+    <div class="section-title">GitHub & social previews</div>
+    <div class="section-desc">Open Graph images, README headers, and social cards follow the same dark + ember system. The tagline adapts per module.</div>
+
+    <div class="social-preview">
+      <div class="social-card">
+        <svg style="width:120px;margin-bottom:1.5rem;position:relative" viewBox="0 0 320 64" fill="none">
+          <rect x="0" y="38" width="10" height="26" rx="2" fill="#E8652A"/>
+          <rect x="14" y="24" width="10" height="40" rx="2" fill="#E8652A"/>
+          <rect x="28" y="10" width="10" height="54" rx="2" fill="#E8652A"/>
+          <text x="52" y="52" font-family="'Anybody',sans-serif" font-weight="700" font-size="40" letter-spacing="-1" fill="#EAEAEF">kindling</text>
+        </svg>
+        <div class="social-title">Open infrastructure for the agent economy</div>
+        <div class="social-desc">Transparent discovery, reputation, and settlement rails.</div>
+      </div>
+      <div class="social-label">GitHub org social preview — 1280 × 640</div>
+    </div>
+
+    <div class="social-preview" style="margin-top:1rem">
+      <div class="social-card" style="min-height:200px">
+        <div class="social-title" style="font-size:1.4rem">Kindling Igniter</div>
+        <div class="social-desc">x402 + MCP + A2A in one command. Ship agent-native services in 5 minutes.</div>
+      </div>
+      <div class="social-label">Repo social preview — kindling/igniter — 1280 × 640</div>
+    </div>
+  </section>
+
+  <!-- 06 VOICE -->
+  <section class="brand-section">
+    <div class="section-label">06 — Voice & Messaging</div>
+    <div class="section-title">How Kindling speaks</div>
+    <div class="section-desc">Infrastructure, not hype. Precision, not jargon. Honest about trade-offs. Respectful of the reader's intelligence.</div>
+
+    <div class="guideline">
+      <div class="do"><div class="label">Do</div><p>"Kindling Verifier scores services across three dimensions: demand, reliability, and outcome. Methodology is published and reproducible."</p></div>
+      <div class="dont"><div class="label">Don't</div><p>"Our revolutionary AI-powered reputation engine leverages cutting-edge on-chain analytics to deliver unparalleled trust scores."</p></div>
+    </div>
+    <div class="guideline">
+      <div class="do"><div class="label">Do</div><p>"PUC operates services that participate in Kindling. First-party services are labeled and receive no scoring advantages."</p></div>
+      <div class="dont"><div class="label">Don't</div><p>"Built by the community, for the community!" (when it's built by PUC)</p></div>
+    </div>
+    <div class="guideline">
+      <div class="do"><div class="label">Do</div><p>"IntentForge improved tool selection accuracy by 27% in our benchmarks. Methodology and raw data: [link]."</p></div>
+      <div class="dont"><div class="label">Don't</div><p>"IntentForge delivers 10x better results than anything else on the market."</p></div>
+    </div>
+
+    <div style="margin-top:2rem">
+      <div class="section-label">Core Messages</div>
+      <div class="type-specimen">
+        <div class="specimen-label">Tagline</div>
+        <div class="display-sample" style="font-size:1.6rem">Open infrastructure for the agent economy.</div>
+      </div>
+      <div class="type-specimen">
+        <div class="specimen-label">One-liner</div>
+        <div class="body-sample">Transparent discovery, reputation, and settlement rails for AI agent services.</div>
+      </div>
+      <div class="type-specimen">
+        <div class="specimen-label">Elevator</div>
+        <div class="body-sample">Kindling is a set of open-source modules that make it easy to build, discover, evaluate, and pay for agent-native services. Each module is independently useful. Together, they create reinforcing loops across MCP, A2A, and x402. Economics are on-chain and auditable. Built by Permanent Upper Class.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 07 CSS EXPORT -->
+  <section class="brand-section">
+    <div class="section-label">07 — Implementation</div>
+    <div class="section-title">CSS variables export</div>
+    <div class="section-desc">Copy-paste into any project. All tokens are defined as CSS custom properties. Also available as <code style="font-family:var(--mono);font-size:0.85em">tokens.json</code> and <code style="font-family:var(--mono);font-size:0.85em">tailwind-preset.js</code>.</div>
+
+    <div class="code-example"><span class="comment">/* Kindling Design Tokens v1.0 */</span>
+<span class="keyword">:root</span> {
+  <span class="comment">/* Primary */</span>
+  <span class="func">--ember</span>: <span class="string">#E8652A</span>;
+  <span class="func">--ember-light</span>: <span class="string">#F0884E</span>;
+  <span class="func">--ember-glow</span>: <span class="string">rgba(232, 101, 42, 0.12)</span>;
+  <span class="func">--ember-dim</span>: <span class="string">#B84D1E</span>;
+
+  <span class="comment">/* Surfaces */</span>
+  <span class="func">--void</span>: <span class="string">#08080B</span>;
+  <span class="func">--ground</span>: <span class="string">#0D0D11</span>;
+  <span class="func">--surface-1</span>: <span class="string">#131317</span>;
+  <span class="func">--surface-2</span>: <span class="string">#1A1A20</span>;
+  <span class="func">--surface-3</span>: <span class="string">#222228</span>;
+
+  <span class="comment">/* Borders */</span>
+  <span class="func">--border-subtle</span>: <span class="string">#1E1E26</span>;
+  <span class="func">--border-default</span>: <span class="string">#2A2A34</span>;
+  <span class="func">--border-ember</span>: <span class="string">rgba(232, 101, 42, 0.25)</span>;
+
+  <span class="comment">/* Text */</span>
+  <span class="func">--text-primary</span>: <span class="string">#EAEAEF</span>;
+  <span class="func">--text-secondary</span>: <span class="string">#9898AC</span>;
+  <span class="func">--text-tertiary</span>: <span class="string">#5E5E72</span>;
+
+  <span class="comment">/* Semantic */</span>
+  <span class="func">--trust</span>: <span class="string">#3B9ECC</span>;
+  <span class="func">--growth</span>: <span class="string">#5EBB6E</span>;
+  <span class="func">--caution</span>: <span class="string">#CCB43B</span>;
+  <span class="func">--critical</span>: <span class="string">#E84040</span>;
+
+  <span class="comment">/* Typography */</span>
+  <span class="func">--display</span>: <span class="string">'Anybody', sans-serif</span>;
+  <span class="func">--body</span>: <span class="string">'Source Serif 4', serif</span>;
+  <span class="func">--mono</span>: <span class="string">'IBM Plex Mono', monospace</span>;
+}</div>
+  </section>
+
+</div>
+
+<footer style="padding:3rem 2rem;text-align:center;border-top:1px solid var(--border-subtle)">
+  <svg style="width:100px;margin-bottom:1rem" viewBox="0 0 320 64" fill="none">
+    <rect x="0" y="38" width="10" height="26" rx="2" fill="#E8652A"/>
+    <rect x="14" y="24" width="10" height="40" rx="2" fill="#E8652A"/>
+    <rect x="28" y="10" width="10" height="54" rx="2" fill="#E8652A"/>
+    <text x="52" y="52" font-family="'Anybody',sans-serif" font-weight="700" font-size="40" letter-spacing="-1" fill="#EAEAEF">kindling</text>
+  </svg>
+  <p style="font-family:var(--mono);font-size:0.6rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--text-tertiary)">
+    Brand Package v1.0 · Permanent Upper Class · March 2026
+  </p>
+</footer>
+
+</body>
+</html>
